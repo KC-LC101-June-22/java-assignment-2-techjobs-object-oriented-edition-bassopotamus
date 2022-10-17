@@ -96,4 +96,39 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    public String toString(){
+        String employerString = employer.toString();
+        String locationString = location.toString();
+        String positionString = positionType.toString();
+        String competencyString = coreCompetency.toString();
+
+        if(name == ""){
+            name = "Data not available";
+        }
+
+        if(employerString == ""){
+            employerString = "Data not available";
+        }
+
+        if(locationString == ""){
+            locationString = "Data not available";
+        }
+
+        if(positionString == ""){
+            positionString = "Data not available";
+        }
+
+        if(competencyString == ""){
+            competencyString = "Data not available";
+        }
+
+        return "\n" +
+                "ID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employerString + "\n" +
+                "Location: " + locationString + "\n" +
+                "Position Type: " + positionString + "\n" +
+                "Core Competency: " + competencyString + "\n";
+    }
 }
