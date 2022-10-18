@@ -53,10 +53,8 @@ public class JobTest {
         String stringToTest = test_job_6.toString();
         String test = "\n";
 
-
-        assertEquals("\n", String.valueOf(stringToTest.charAt(0)));
-        assertEquals("\n", String.valueOf(stringToTest.charAt(stringToTest.length()-1)));
-
+        assertEquals('\n', stringToTest.charAt(0));
+        assertEquals('\n', stringToTest.charAt(stringToTest.length()-1));
     }
 
     @Test
@@ -64,25 +62,16 @@ public class JobTest {
         Job test_job_7 = new Job("Typing monkey", new Employer("Microsoft"), new Location("Redmond"), new PositionType("Button hitter"), new CoreCompetency("Hit buttons"));
         String stringToTest2 = test_job_7.toString();
 
-        assertTrue(stringToTest2.contains("ID: 4"));
-        assertTrue(stringToTest2.contains("Name: Typing monkey"));
-        assertTrue(stringToTest2.contains("Employer: Microsoft"));
-        assertTrue(stringToTest2.contains("Location: Redmond"));
-        assertTrue(stringToTest2.contains("Position Type: Button hitter"));
-        assertTrue(stringToTest2.contains("Core Competency: Hit buttons"));
+        assertEquals("Name: Typing monkey", stringToTest2);
 
     }
 
     @Test
     public void testToStringHandlesEmptyField(){
         Job test_job_7 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
-        String stringToTest2 = test_job_7.toString();
+        String stringToTest3 = test_job_7.toString();
 
-        assertTrue(stringToTest2.contains("Name: Data not available"));
-        assertTrue(stringToTest2.contains("Employer: Data not available"));
-        assertTrue(stringToTest2.contains("Location: Data not available"));
-        assertTrue(stringToTest2.contains("Position Type: Data not available"));
-        assertTrue(stringToTest2.contains("Core Competency: Data not available"));
+        assertEquals("ID: Data not available", stringToTest3);
 
     }
 }

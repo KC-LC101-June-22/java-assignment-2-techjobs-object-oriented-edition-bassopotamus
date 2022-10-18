@@ -98,29 +98,41 @@ public class Job {
     }
 
     public String toString(){
-        String employerString = employer.toString();
-        String locationString = location.toString();
-        String positionString = positionType.toString();
-        String competencyString = coreCompetency.toString();
+        String employerString;
+        String locationString;
+        String positionString;
+        String competencyString;
 
         if(name == ""){
             name = "Data not available";
         }
 
-        if(employerString == ""){
+        if(employer == null || employer.toString() == ""){
             employerString = "Data not available";
         }
+        else{
+            employerString = employer.toString();
+        }
 
-        if(locationString == ""){
+        if(location == null || location.toString() == ""){
             locationString = "Data not available";
         }
-
-        if(positionString == ""){
-            positionString = "Data not available";
+        else{
+            locationString = location.toString();
         }
 
-        if(competencyString == ""){
+        if(positionType == null || positionType.toString() == ""){
+            positionString = "Data not available";
+        }
+        else{
+            positionString = positionType.toString();
+        }
+
+        if(coreCompetency == null || coreCompetency.toString() == ""){
             competencyString = "Data not available";
+        }
+        else{
+            competencyString = coreCompetency.toString();
         }
 
         return "\n" +
